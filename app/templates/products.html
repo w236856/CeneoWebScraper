@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}Lista produktów{% endblock %}
+{% block content %}
+<ul class="list-group">
+  {% for product in products %}
+    <li class="list-group-item">
+      <div class="d-flex flex-column gap-2">
+
+        <!-- Górna linia: ID i nazwa -->
+        <div class="d-flex align-items-center gap-3 flex-wrap">
+          <a class="btn btn-outline-secondary btn-sm" href="{{ url_for('product', product_id=product.product_id, product_name=product.product_name) }}">
+            {{ product.product_id }}
+          </a>
+          <strong class="text-break">{{ product.product_name }}</strong>
+        </div>
+
+        <!-- Dolna linia: Badge'e i przyciski -->
+        <div class="d-flex align-items-center gap-3 flex-wrap ms-8 ps-3">
+          <!-- Badge'e -->
+          <div class="d-flex align-items-center gap-2">
+            <span class="badge bg-primary rounded-pill">{{ product.opinions_count }}</span>
+            <span class="badge bg-success rounded-pill">{{ product.pros_count }}</span>
+            <span class="badge bg-danger rounded-pill">{{ product.cons_count }}</span>
+            <span class="badge bg-warning text-dark rounded-pill">{{ product.average_stars|round(2) }}</span>
+          </div>
+          <!-- Przyciski -->
+          <div class="d-flex align-items-center gap-2">
+            <a class="btn btn-info btn-sm" href="{{ url_for('export_product', product_id=product.product_id, format='csv') }}">CSV</a>
+            <a class="btn btn-info btn-sm" href="{{ url_for('export_product', product_id=product.product_id, format='xlsx') }}">XLSX</a>
+            <a class="btn btn-info btn-sm" href="{{ url_for('export_product', product_id=product.product_id, format='json') }}">JSON</a>
+          </div>
+        </div>
+
+      </div>
+    </li>
+  {% endfor %}
+</ul>
+{% endblock %}

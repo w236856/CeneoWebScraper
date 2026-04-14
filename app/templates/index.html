@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Opis projektu{% endblock %}
+{% block content %}
+<ol>
+    <li>Aplikacja służy do zbierania i analizowania opinii o produktach dostępnych w serwisie Ceneo.pl. 
+Po podaniu kodu produktu system automatycznie pobiera jego nazwę oraz wszystkie opinie, 
+a następnie prezentuje je w czytelnej formie.</li> 
+    <li>Dla każdego produktu aplikacja pobiera i prezentuje szczegółowe informacje z opinii, w tym:
+❖ identyfikator opinii
+❖ autora
+❖ rekomendację
+❖ liczbę gwiazdek
+❖ czy opinia jest potwierdzona zakupem
+❖ data wystawienia opinii
+❖ data zakupu produktu
+❖ ile osób uznało opinię za przydatną
+❖ ile osób uznało opinię za nieprzydatną
+❖ treść opinii
+❖ listę wad
+❖ listę zalet. 
+Jeśli dana informacja nie jest dostępna, odpowiednie pole pozostaje puste.</li>
+    <li>Zastosowane biblioteki: app, os, json, requests, pandas, Beautiful Soup, matplotlib, flask, io, numpy</li> 
+    <li>Zastosowane podejścia: strukturalne</li>
+</ol>
+
+
+{% endblock %}

@@ -1,0 +1,87 @@
+h1{
+    color: #ff6c00;
+}
+
+p{
+    text-align: center;
+    
+}
+button:hover{
+    background-color: brown;
+    
+
+}
+input {
+    color: #ff6c00;
+
+}
+.btn:hover{
+    color:#ff6c00;
+    background-color: blanchedalmond;
+    text-align: center;
+}
+
+li{
+    color: brown;
+    text-align: center;
+}
+
+
+ol {
+    width: 1200px;
+    height: 300px;
+    padding: 20px;
+    display:flex;
+    gap: 4vw;
+
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+   
+    }
+
+ol li {
+    list-style-type: none;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    padding: 20px;
+
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+}
+
+
+ol::scroll-button(*) {
+border: 0;
+font-size: 2rem;
+background: none;
+color: rgb(0 0 0 / 0.7);
+cursor: pointer;
+
+
+}
+
+ol::scroll-button(*):hover,
+ol::scroll-button(*):focus {
+  color: rgb(0 0 0 / 1);
+}
+
+ol::scroll-button(*):active {
+  translate: 1px 1px;
+}
+
+ol::scroll-button(*):disabled {
+  color: rgb(0 0 0 / 0.2);
+  cursor: unset;
+}
+
+
+ol::scroll-button(left) {
+  content: "◄";
+
+}
+
+ol::scroll-button(right) {
+  content: "►";
+}
+
+
